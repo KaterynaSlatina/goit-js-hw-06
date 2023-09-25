@@ -11,7 +11,7 @@ btnPlus.addEventListener('click', () => {
 });
 
 btnMinus.addEventListener('click', () => {
-    counterValue += 1;
+    counterValue -= 1;
     value.textContent = counterValue;
 });
    

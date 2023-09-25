@@ -1,23 +1,19 @@
-const userName = document.querySelector('#validation-input');
-const userNameLength = userName.dataset.length;
 
-userName.addEventListener('blur', blurBorderColor);
-
-function blurBorderColor(evt) {
     
-    if (evt.currentTarget.value.length === userNameLength) {
+const userName = document.getElementById('validation-input');
+userName.addEventListener('blur', BlurBorderColor);
+
+function BlurBorderColor(event) {
+    const inputDataLength = Number(userName.dataset.length);
+    const inputValueLength = Number(userName.value.trim().length);
+
+    if (inputValueLength === inputDataLength) {
         userName.classList.add('valid');
         userName.classList.remove('invalid');
-        console.log(evt);
-    }
-    else 
-        userName.classList.add('invalid');
+    } else {
         userName.classList.remove('valid');
-
-        console.log(evt); 
-    } 
-
-    
-        
+        userName.classList.add('invalid');
+    }
+}
         
     
